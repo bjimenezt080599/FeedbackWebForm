@@ -1,0 +1,41 @@
+<!-- feedback-form.component.html -->
+<div>
+  <img src="assets\BDACLogo.png" alt="Logo">
+</div>
+<div>
+  <form (ngSubmit)="onSubmit()">
+    <label for="feedbackType">Feedback Type:</label>
+    <input type="text" name="feedbackType" [(ngModel)]="feedbackType" required>
+
+    <label for="source">Source:</label>
+    <input type="text" name="source" [(ngModel)]="source" required>
+
+    <label for="feedbackCategory">Feedback Category:</label>
+    <select name="feedbackCategory" [(ngModel)]="feedbackCategory" required>
+      <!-- Options for the dropdown list -->
+      <option value="option1">Option 1</option>
+      <option value="option2">Option 2</option>
+    </select>
+
+    <label for="feedbackSubCategory">Feedback SubCategory:</label>
+    <select name="feedbackSubCategory" [(ngModel)]="feedbackSubCategory" required>
+      <!-- Options for the dropdown list -->
+      <option value="suboption1">Suboption 1</option>
+      <option value="suboption2">Suboption 2</option>
+    </select>
+
+    <label for="dateReceived">Date Received:</label>
+    <input type="datetime-local" name="dateReceived" [(ngModel)]="dateReceived" required>
+
+    <label for="text">Text:</label>
+    <textarea name="text" [(ngModel)]="text"></textarea>
+
+    <label for="notes">Notes:</label>
+    <textarea name="notes" [(ngModel)]="notes"></textarea>
+
+    <label for="wantToBeContacted">Quiere ser contactado:</label>
+    <input type="checkbox" name="wantToBeContacted" [(ngModel)]="wantToBeContacted">
+
+    <button type="submit">Enviar</button>
+  </form>
+</div>
