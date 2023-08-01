@@ -36,7 +36,8 @@ export class FeedbackFormComponent {
     // Make the GraphQL API call using HttpClient
         this.httpClient.post('https://housing.logiqc.com.au/graphql', { query: mutation }, {
       headers: {
-        'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJUb2tlbklkIjoiM2QwM2NkMDYtMGRlZS00MjdjLWIzZDQtYjAyMzAwYzdiOWI3IiwiVXNlck5hbWUiOiJTeXN0ZW0iLCJEYXRlQ3JlYXRlZCI6IjIwMjMtMDYtMTZUMTI6MDc6MTAuNjg1NzEwNisxMDowMCIsIklzQXBpS2V5Ijp0cnVlLCJJc1NzbyI6ZmFsc2V9.w51Z5HxGMQo92N9z7Etc4kR_J8gsJ0CTSNe39nEzwbY'
+        'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJUb2tlbklkIjoiM2QwM2NkMDYtMGRlZS00MjdjLWIzZDQtYjAyMzAwYzdiOWI3IiwiVXNlck5hbWUiOiJTeXN0ZW0iLCJEYXRlQ3JlYXRlZCI6IjIwMjMtMDYtMTZUMTI6MDc6MTAuNjg1NzEwNisxMDowMCIsIklzQXBpS2V5Ijp0cnVlLCJJc1NzbyI6ZmFsc2V9.w51Z5HxGMQo92N9z7Etc4kR_J8gsJ0CTSNe39nEzwbY',
+        'Content-Type': 'application/json'
       }
     }).subscribe((response: any) => {
       console.log('Respuesta de la API:', response);
