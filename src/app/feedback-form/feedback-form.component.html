@@ -1,68 +1,119 @@
 <!-- feedback-form.component.html -->
-<div>
-  <link href="feedback-form.component.css" rel="stylesheet">
-  <div class="styleform">
-<div class="text-center mt-2 mb-2">             
-  <a href='feedback-form.component.html'><img src="assets/BDACLogo.png" width="160px" alt=""></a>
-</div>
-<div>
-  <form (ngSubmit)="onSubmit()">
-    <div>
-      <label for="name">Name:</label>
-      <input type="text" name="contactName" [(ngModel)]="contactName" required><br>
-      <label for="Email">Email:</label>
-
-      <input type="email" name="contactEmail" [(ngModel)]="contactEmail" required><br>
-      <label for="Phone Number">Phone Number:</label>
-
-      <input type="number" name="contactPhoneNumber" [(ngModel)]="contactPhoneNumber" required><br><br>
+<head>
+  <title>FORM</title>
+  <link href="feedback-form.component.css" rel="stylesheet" />
+</head>
+<body>
+  <div>
+    <div class="text-center mt-2 mb-2 stylelogo">
+      <a href="feedback-form.component.html"
+        ><img
+          src="/assets/LogoBDAC.png"
+          width="260px"
+          alt=""
+      /></a>
     </div>
-    <div>
-      <label for="feedbackType">Feedback Type:</label>
-      <select name="feedbackType" [(ngModel)]="feedbackType" required>
-        <!-- Options for the dropdown list -->
-        <option value="Complaint">Complaint</option>
-        <option value="Compliment">Compliment</option>
-        <option value="Suggestion">Feedback</option>
-      </select><br>
+    <div class="styleform">
+      <div>
+        <form (ngSubmit)="onSubmit()">
+          <div>
+            <label for="name" class="textform"> <p> Name</p> </label>
+            <input
+              class="boxform1"
+              type="text"
+              name="contactName"
+              [(ngModel)]="contactName"
+              required
+            /><br />
+            <label for="Email" class="textform"> <p>Email</p> </label>
+            <input
+              class="boxform1"
+              type="email"
+              name="contactEmail"
+              [(ngModel)]="contactEmail"
+              required
+            /><br />
+            <label for="Phone Number" class="textform"> <p>Phone Number</p> </label>
+            <input
+              class="boxform1"
+              type="number"
+              name="contactPhoneNumber"
+              [(ngModel)]="contactPhoneNumber"
+              required
+            /><br /><br />
+          </div>
+          <div>
+            <label for="feedbackType"class="textform"><p>Feedback Type</p></label>
+            <select name="feedbackType" class="boxform1" [(ngModel)]="feedbackType" required>
+              <!-- Options for the dropdown list -->
+              <option value="Complaint">Complaint</option>
+              <option value="Compliment">Compliment</option>
+              <option value="Suggestion">Feedback</option></select
+            ><br />
 
-      <label for="source">Source:</label>
-      <select name="source" [(ngModel)]="source" required>
-        <!-- Options for the dropdown list -->
-        <option value="option1">Supplier</option>
-        <option value="option2">Option 2</option>
-      </select><br>
+            <label for="source"class="textform"><p>Source</p></label>
+            <select name="source" class="boxform1" [(ngModel)]="source" required>
+              <!-- Options for the dropdown list -->
+              <option value="Supplier">Supplier</option>
+              <option value="option2">Option 2</option></select
+            ><br />
 
-      <label for="feedbackCategory">Feedback Category:</label>
-      <select name="feedbackCategory" [(ngModel)]="feedbackCategory" required>
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-      </select><br>
+            <label for="feedbackCategory"class="textform"><p>Feedback Category</p></label>
+            <select
+              class="boxform1"
+              name="feedbackCategory"
+              [(ngModel)]="feedbackCategory"
+              required
+            >
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option></select
+            ><br />
 
-      <label for="feedbackSubCategory">Feedback SubCategory:</label>
-      <select name="feedbackSubCategory" [(ngModel)]="feedbackSubCategory" required>
-        <option value="suboption1">Suboption 1</option>
-        <option value="suboption2">Suboption 2</option>
-      </select><br>
+            <label for="feedbackSubCategory"class="textform"><p>Feedback SubCategory</p></label>
+            <select
+              class="boxform1"
+              name="feedbackSubCategory"
+              [(ngModel)]="feedbackSubCategory"
+              required
+            >
+              <option value="suboption1">Suboption 1</option>
+              <option value="suboption2">Suboption 2</option></select
+            ><br />
 
-      <label for="dateReceived">Date Received:</label>
-      <input type="datetime-local" name="dateReceived" [(ngModel)]="dateReceived" required><br>
+            <label for="dateReceived"class="textform"><p>Date Received</p></label>
+            <input
+              class="boxform1"
+              type="datetime-local"
+              name="dateReceived"
+              [(ngModel)]="dateReceived"
+              required
+            /><br />
 
-      <label for="text">Text:</label>
-      <textarea name="text" [(ngModel)]="text"></textarea><br>
+            <label for="text"class="textform"><p>Text</p></label>
+            <textarea name="text" class="boxform1" [(ngModel)]="text"></textarea><br />
 
-      <label for="notes">Notes:</label>
-      <textarea name="notes" [(ngModel)]="notes"></textarea><br>
+            <label for="notes"class="textform"><p>Notes</p></label>
+            <textarea name="notes" class="boxform1"[(ngModel)]="notes"></textarea><br />
 
-      <label for="wantToBeContacted">Want to be contacted?:</label>
-      <input type="checkbox" name="wantToBeContacted" [(ngModel)]="wantToBeContacted"><br>
-
-      <button type="submit">Enviar</button><br>
+            <label for="wantToBeContacted"class="textform">Want to be contacted?  </label>
+            <input
+              type="checkbox"
+              name="wantToBeContacted"
+              [(ngModel)]="wantToBeContacted"
+            /><br />
+            <div class="d-grid mb-2 mx-4">
+              <button
+                class="btn-Send"
+                type="submit"
+                value="Send"
+                class="btn btn-lg btn-buscar btn-default"
+              >
+                SEND
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-    
-
-   
-
-    
-  </form>
-</div>
+  </div>
+</body>

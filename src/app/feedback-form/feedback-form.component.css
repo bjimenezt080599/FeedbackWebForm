@@ -1,9 +1,56 @@
 h2{
   color: #FFF;
 }
-.styleform{
+.stylelogo{
     background-color: #313131;
     background-size: 100% 100%;
-    margin:0px;
-    padding:0px;
+    margin:-10px;
+    padding:35px;
+}
+.styleform{
+  margin: 10px 350px;
+  display: inline-block;
+  padding-block: 10px 10px;
+  background-size: auto;
+  width: 250px;
+}
+.textform{
+  font-size: 1.125em;
+  line-height: 1.8;
+  font-family: sans-serif;
+}
+.boxform1{
+  font-family: sans-serif;
+  padding: 10px;
+  border-color: rgba(49,49,49,0.2);
+  border-radius: 0;
+  width: 600px;
+  color: #222;
+  line-height: normal;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+.btn-Send{
+  background-color: #ffb612;
+  color:#000;
+  text-decoration:solid;
+  border-color: #ffb612;
+  font-family: sans-serif;
+  padding: 10px;
+  border-radius: 0;
+  line-height: normal;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+#header {
+  margin:auto;
+  width:2000px;
+  font-family:Arial, Helvetica, sans-serif;
+}
+.nav li a {
+  background-color:#ffb612;
+  color:#000;
+  text-decoration:solid;
+  padding:5px 12px;
+  display:block;
 }
