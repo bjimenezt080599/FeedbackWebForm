@@ -14,20 +14,24 @@ h2{
   background-size: auto;
   width: 250px;
 }
+.end{
+  background-color: #ffb612;
+  background-size: 100% 100%;
+  margin:-10px;
+  padding:70px;
+}
 .textform{
   font-size: 1.125em;
   line-height: 1.8;
   font-family: sans-serif;
 }
 .textformh1{
-  /*font-size: 1.125em;
-  line-height: 1.8;*/
+  padding: 20px;
   color: #222;
   font-family: sans-serif;
 }
 .textformh2{
-  /*font-size: 1.125em;
-  line-height: 1.8;*/
+  width: 400px;
   color: #222;
   font-family: sans-serif;
 }
@@ -45,14 +49,14 @@ h2{
 .btn-Send{
   background-color: #ffb612;
   color:#000;
-  text-decoration:solid;
   border-color: #ffb612;
   font-family: sans-serif;
-  padding: 10px;
-  border-radius: 0;
-  line-height: normal;
+  margin: 30px 0px;
+  padding: 15px 40px;
   font-size: 100%;
-  vertical-align: baseline;
+}
+.checktime{
+  padding: 10px;
 }
 #header {
   margin:auto;
