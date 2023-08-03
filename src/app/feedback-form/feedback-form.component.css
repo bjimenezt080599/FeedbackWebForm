@@ -2,7 +2,7 @@ h2{
   color: #FFF;
 }
 .stylelogo{
-    background-color: #ffb612;
+    background-color: #333;
     background-size: 100% 100%;
     margin:-10px;
     padding:35px;
@@ -17,6 +17,18 @@ h2{
 .textform{
   font-size: 1.125em;
   line-height: 1.8;
+  font-family: sans-serif;
+}
+.textformh1{
+  /*font-size: 1.125em;
+  line-height: 1.8;*/
+  color: #222;
+  font-family: sans-serif;
+}
+.textformh2{
+  /*font-size: 1.125em;
+  line-height: 1.8;*/
+  color: #222;
   font-family: sans-serif;
 }
 .boxform1{

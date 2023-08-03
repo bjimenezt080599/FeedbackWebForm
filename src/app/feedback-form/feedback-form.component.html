@@ -13,10 +13,13 @@
           alt=""
       /></a>
     </div>
+    <h1 class="textformh1">Title to define</h1>
     <div class="styleform">
       <div>
         <form (ngSubmit)="onSubmit()">
+          
           <div>
+            <h2 class="textformh2">Subtitle 1 to define</h2>
             <label for="name" class="textform"> <p> Name</p> </label>
             <input
               class="boxform1"
@@ -43,6 +46,7 @@
             /><br /><br />
           </div>
           <div>
+            <h2 class="textformh2">Subtitle 2 to define</h2>
             <label for="feedbackType"class="textform"><p>Feedback Type</p></label>
             <select name="feedbackType" class="boxform1" [(ngModel)]="feedbackType" required>
               <!-- Options for the dropdown list -->
@@ -50,7 +54,6 @@
               <option value="Compliment">Compliment</option>
               <option value="Suggestion">Feedback</option></select
             ><br />
-
             <label for="source"class="textform"><p>Source</p></label>
             <select name="source" class="boxform1" [(ngModel)]="source" required>
               <!-- Options for the dropdown list -->
@@ -106,7 +109,6 @@
                 class="btn-Send"
                 type="submit"
                 value="Send"
-                class="btn btn-lg btn-buscar btn-default"
               >
                 SEND
               </button>
