@@ -157,9 +157,9 @@
         // Establecer el estilo de visualización de los campos y títulos según el estado del checkbox
         for (var i = 0; i < fields.length; i++) {
             if (checkbox.checked) {
-                fields[i].classList.add('hidden'); // Mostrar campos y títulos
+                fields[i].classList.remove('hidden'); // Mostrar campos y títulos
             } else {
-                fields[i].classList.remove('hidden'); // Ocultar campos y títulos
+                fields[i].classList.add('hidden'); // Ocultar campos y títulos
             }
         }
     }
