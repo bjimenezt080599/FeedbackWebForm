@@ -50,10 +50,16 @@ h2{
   background-color: #ffb612;
   color:#000;
   border-color: #ffb612;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   font-family: sans-serif;
   margin: 30px 0px;
   padding: 15px 40px;
   font-size: 100%;
+}
+.btn:hover{
+  background-color: #f28500;
+  color:#000;
+  border-color: #f28500;
 }
 .checktime{
   padding: 10px;
@@ -69,4 +75,7 @@ h2{
   text-decoration:solid;
   padding:5px 12px;
   display:block;
+}
+.hidden {
+  display: none;
 }
