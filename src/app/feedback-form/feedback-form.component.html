@@ -15,44 +15,45 @@
     <div class="styleform">
       <div>
         <form (ngSubmit)="onSubmit()">
-          
           <div>
-            <h2 class="textformh2">If You Would Like To Be Contacted</h2>
-            <label for="name" class="textform"> <p>First Name</p> </label>
+            <h2 class="textformh2 field">If You Would Like To Be Contacted</h2>
+            <label for="name" class="textform field"> <p>First Name</p> </label>
             <input
-              class="boxform1"
+              class="boxform1 field"
               type="text"
               name="contactName"
               [(ngModel)]="contactName"
               required
             /><br />
-            <label for="name" class="textform"> <p>Last Name</p> </label>
+            <label for="name" class="textform field"> <p>Last Name</p> </label>
             <input
-              class="boxform1"
+              class="boxform1 field"
               type="text"
               name="contactName"
               [(ngModel)]="contactName"
               required
             /><br />
-            <label for="Email" class="textform"> <p>Email</p> </label>
+            <label for="Email" class="textform field"> <p>Email</p> </label>
             <input
-              class="boxform1"
+              class="boxform1 field"
               type="email"
               name="contactEmail"
               [(ngModel)]="contactEmail"
               required
             /><br />
-            <label for="Phone Number" class="textform">
+            <label for="Phone Number" class="textform field">
               <p>Phone Number</p>
             </label>
             <input
-              class="boxform1"
+              class="boxform1 field"
               type="number"
               name="contactPhoneNumber"
               [(ngModel)]="contactPhoneNumber"
               required
             /><br /><br />
           </div>
+        </form>
+        <form (ngSubmit)="onSubmit()">
           <div>
             <h2 class="textformh2">About Your Feedback</h2>
             <label for="feedbackType" class="textform"
@@ -64,7 +65,6 @@
               [(ngModel)]="feedbackType"
               required
             >
-              <!-- Options for the dropdown list -->
               <option value="Feedback Type" selected disabled>Feedback Type</option>
               <option value="Complaint">Complaint</option>
               <option value="Compliment">Compliment</option>
@@ -77,7 +77,6 @@
               [(ngModel)]="source"
               required
             >
-              <!-- Options for the dropdown list -->
               <option value="Source" selected disabled>Source</option>
               <option value="Community Member">Community Member</option>
               <option value="Legal Representative">Legal Representative</option>
@@ -140,17 +139,9 @@
               [(ngModel)]="notes"
             ></textarea
             ><br />
-
-            <label for="wantToBeContacted" class="textform"
-              >Want to be contacted?
-            </label>
-            <input
-              type="checkbox"
-              name="wantToBeContacted"
-              [(ngModel)]="wantToBeContacted"
-            /><br />
+            <input type="checkbox" id="showfields" class="textform" onchange="toggleFields()"> Want To Be Contacted?
             <div class="d-grid mb-2 mx-4">
-              <button class="btn-Send" type="submit" value="Send">SEND</button>
+              <button class="btn-Send btn" type="submit" value="Send">SEND</button>
             </div>
           </div>
         </form>
@@ -158,4 +149,19 @@
     </div>
   </div>
   <div class="text-center mt-2 mb-2 end"></div>
+  <script>
+    function toggleFields() {
+        var fields = document.querySelectorAll('.field'); // Obtener todos los elementos con la clase "campo"
+        var checkbox = document.getElementById('showfields'); // Obtener el checkbox
+
+        // Establecer el estilo de visualización de los campos y títulos según el estado del checkbox
+        for (var i = 0; i < fields.length; i++) {
+            if (checkbox.checked) {
+                fields[i].classList.remove('hidden'); // Mostrar campos y títulos
+            } else {
+                fields[i].classList.add('hidden'); // Ocultar campos y títulos
+            }
+        }
+    }
+</script>
 </body>
