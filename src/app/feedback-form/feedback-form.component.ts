@@ -9,6 +9,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class FeedbackFormComponent {
   contactName: string = '';
+  contactLastName: string = '';
   contactEmail: string = '';
   contactPhoneNumber: string = '';
   feedbackType: string = '';
@@ -30,7 +31,7 @@ export class FeedbackFormComponent {
         feedbackSubCategory: "${this.feedbackSubCategory}",
         dateReceived: "${this.dateReceived}",
         text: "${this.text}",
-        notes: "${this.notes}. Consumer want to be contacted?: ${this.wantToBeContacted}. Contact information: Name: ${this.contactName}, Email: ${this.contactEmail}, Phone Number: ${this.contactPhoneNumber}"
+        notes: "${this.notes}. Consumer want to be contacted?: ${this.wantToBeContacted}. Contact information: Name: ${this.contactName}, Last name: ${this.contactLastName}, Email: ${this.contactEmail}, Phone Number: ${this.contactPhoneNumber}"
       })}`;
     console.log(mutation);
     // Make the GraphQL API call using HttpClient

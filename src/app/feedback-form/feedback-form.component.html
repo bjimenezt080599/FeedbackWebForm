@@ -1,6 +1,6 @@
 <!-- feedback-form.component.html -->
 <head>
-  <link id="favIconLink" rel="shortcut icon" type="image/x-icon" href="/Users/kilverthestebanclarosordonez/Downloads/FeedbackWebForm-main/src/assets/iconBDAC.png">
+  <link id="favIconLink" rel="icon" type="image/png" href="assets/iconBDAC.png">
   <title>Feedback and Complains</title>
   <link href="feedback-form.component.css" rel="stylesheet" />
 </head>
@@ -8,51 +8,13 @@
   <div>
     <div class="text-center mt-2 mb-2 stylelogo">
       <a href="feedback-form.component.html"
-        ><img src="/Users/kilverthestebanclarosordonez/Downloads/FeedbackWebForm-main/src/assets/LogoBDAC.png" width="260px" alt=""
+        ><img src="assets/LogoBDAC.png" width="260px" alt=""
       /></a>
     </div>
     <h1 class="textformh1">Feedback and Complains</h1>
     <div class="styleform">
       <div>
         <form (ngSubmit)="onSubmit()">
-          
-          <div>
-            <h2 class="textformh2">If You Would Like To Be Contacted</h2>
-            <label for="name" class="textform"> <p>First Name</p> </label>
-            <input
-              class="boxform1"
-              type="text"
-              name="contactName"
-              [(ngModel)]="contactName"
-              required
-            /><br />
-            <label for="name" class="textform"> <p>Last Name</p> </label>
-            <input
-              class="boxform1"
-              type="text"
-              name="contactName"
-              [(ngModel)]="contactName"
-              required
-            /><br />
-            <label for="Email" class="textform"> <p>Email</p> </label>
-            <input
-              class="boxform1"
-              type="email"
-              name="contactEmail"
-              [(ngModel)]="contactEmail"
-              required
-            /><br />
-            <label for="Phone Number" class="textform">
-              <p>Phone Number</p>
-            </label>
-            <input
-              class="boxform1"
-              type="number"
-              name="contactPhoneNumber"
-              [(ngModel)]="contactPhoneNumber"
-              required
-            /><br /><br />
-          </div>
           <div>
             <h2 class="textformh2">About Your Feedback</h2>
             <label for="feedbackType" class="textform"
@@ -148,7 +110,46 @@
               type="checkbox"
               name="wantToBeContacted"
               [(ngModel)]="wantToBeContacted"
-            /><br />
+            /><br /><br />
+
+            <div>
+              <h2 class="textformh2">If You Would Like To Be Contacted</h2>
+              <label for="name" class="textform"> <p>First Name</p> </label>
+              <input
+                class="boxform1"
+                type="text"
+                name="contactName"
+                [(ngModel)]="contactName"
+                required
+              /><br />
+              <label for="name" class="textform"> <p>Last Name</p> </label>
+              <input
+                class="boxform1"
+                type="text"
+                name="contactName"
+                [(ngModel)]="contactLastName"
+                required
+              /><br />
+              <label for="Email" class="textform"> <p>Email</p> </label>
+              <input
+                class="boxform1"
+                type="email"
+                name="contactEmail"
+                [(ngModel)]="contactEmail"
+                required
+              /><br />
+              <label for="Phone Number" class="textform">
+                <p>Phone Number</p>
+              </label>
+              <input
+                class="boxform1"
+                type="number"
+                name="contactPhoneNumber"
+                [(ngModel)]="contactPhoneNumber"
+                required
+              /><br /><br />
+
+            </div>
             <div class="d-grid mb-2 mx-4">
               <button class="btn-Send" type="submit" value="Send">SEND</button>
             </div>
