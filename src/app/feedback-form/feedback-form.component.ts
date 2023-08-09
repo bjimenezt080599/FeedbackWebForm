@@ -9,7 +9,10 @@ import { DOCUMENT } from '@angular/common';
   templateUrl: './feedback-form.component.html',
   styleUrls: ['./feedback-form.component.css']
 })
+
 export class FeedbackFormComponent {
+
+  //Variables
   contactName: string = '';
   contactLastName: string = '';
   contactEmail: string = '';
@@ -23,13 +26,14 @@ export class FeedbackFormComponent {
   notes: string = '';
   wantToBeContacted: boolean = false;
 
+  //Method to activate and deactivate the "Contact" fields
   toggleFields() {
     this.wantToBeContacted = !this.wantToBeContacted;
   }
-  
+
   onSubmit() {
     // Build the mutation to send the data to the GraphQL API
-      const mutation = `mutation feedbackMutation {
+    const mutation = `mutation feedbackMutation {
       feedbackExternalCreate(detail: {
         feedbackType: "${this.feedbackType}",
         source: "${this.source}",
@@ -41,7 +45,7 @@ export class FeedbackFormComponent {
       })}`;
     console.log(mutation);
     // Make the GraphQL API call using HttpClient
-        this.httpClient.post('https://housing.logiqc.com.au/graphql', { query: mutation }, {
+    this.httpClient.post('https://housing.logiqc.com.au/graphql', { query: mutation }, {
       headers: {
         'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJUb2tlbklkIjoiM2QwM2NkMDYtMGRlZS00MjdjLWIzZDQtYjAyMzAwYzdiOWI3IiwiVXNlck5hbWUiOiJTeXN0ZW0iLCJEYXRlQ3JlYXRlZCI6IjIwMjMtMDYtMTZUMTI6MDc6MTAuNjg1NzEwNisxMDowMCIsIklzQXBpS2V5Ijp0cnVlLCJJc1NzbyI6ZmFsc2V9.w51Z5HxGMQo92N9z7Etc4kR_J8gsJ0CTSNe39nEzwbY',
         'Content-Type': 'application/json'
@@ -50,28 +54,29 @@ export class FeedbackFormComponent {
       console.log('Respuesta de la API:', response);
     });
   }
-  
+
   constructor(
-    private titleService: Title, 
+    private titleService: Title,
     private metaService: Meta,
     private renderer: Renderer2,
     @Inject(DOCUMENT) private document: Document,
     private httpClient: HttpClient) {
 
-    this.titleService.setTitle('Feedback and Complains');
+      //Change the icon and title of the window
+      this.titleService.setTitle('Feedback and Complains');
 
-    const newLink = this.renderer.createElement('link');
-    newLink.setAttribute('rel', 'icon');
-    newLink.setAttribute('href', 'assets/iconBDAC.png');
+      const newLink = this.renderer.createElement('link');
+      newLink.setAttribute('rel', 'icon');
+      newLink.setAttribute('href', 'assets/iconBDAC.png');
 
-    const head = this.document.head;
-    const oldLink = head.querySelector('link[rel="icon"]');
+      const head = this.document.head;
+      const oldLink = head.querySelector('link[rel="icon"]');
 
-    if (oldLink) {
-      this.renderer.removeChild(head, oldLink);
+      if (oldLink) {
+        this.renderer.removeChild(head, oldLink);
+      }
+
+      this.renderer.appendChild(head, newLink);
     }
-
-    this.renderer.appendChild(head, newLink);
-  }
 
 }
