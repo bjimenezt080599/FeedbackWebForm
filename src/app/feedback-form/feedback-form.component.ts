@@ -1,6 +1,7 @@
 // feedback-form.component.ts
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-feedback-form',
@@ -21,9 +22,13 @@ export class FeedbackFormComponent {
   notes: string = '';
   wantToBeContacted: boolean = false;
 
+  toggleFields() {
+    this.wantToBeContacted = !this.wantToBeContacted;
+  }
+  
   onSubmit() {
     // Build the mutation to send the data to the GraphQL API
-;    const mutation = `mutation feedbackMutation {
+      const mutation = `mutation feedbackMutation {
       feedbackExternalCreate(detail: {
         feedbackType: "${this.feedbackType}",
         source: "${this.source}",
@@ -44,6 +49,11 @@ export class FeedbackFormComponent {
       console.log('Respuesta de la API:', response);
     });
   }
+  
+  constructor(private titleService: Title, private metaService: Meta, private httpClient: HttpClient) {
+    this.titleService.setTitle('Feedback and Complains');
 
-  constructor(private httpClient: HttpClient) { }
+    this.metaService.updateTag({ name: 'icon', content: 'assets/iconBDAC.png' });
+  }
+
 }

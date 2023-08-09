@@ -1,23 +1,14 @@
 <!-- feedback-form.component.html -->
+<html lang="en">
+
 <head>
-  <link
-    id="favIconLink"
-    rel="shortcut icon"
-    type="image/x-icon"
-    href="assets/iconBDAC.png"
-  />
-  <title>Feedback and Complains</title>
   <link href="feedback-form.component.css" rel="stylesheet" />
 </head>
+
 <body>
   <div>
     <div class="text-center mt-2 mb-2 stylelogo">
-      <a href="feedback-form.component.html"
-        ><img
-          src="assets/LogoBDAC.png"
-          width="260px"
-          alt=""
-      /></a>
+      <a href="feedback-form.component.html"><img src="assets/LogoBDAC.png" width="260px" alt="" /></a>
     </div>
     <h1 class="textformh1">Feedback and Complains</h1>
     <div class="styleform">
@@ -25,29 +16,21 @@
         <form (ngSubmit)="onSubmit()">
           <div>
             <h2 class="textformh2">About Your Feedback</h2>
-            <label for="feedbackType" class="textform"
-              ><p>Feedback Type</p></label
-            >
-            <select
-              name="feedbackType"
-              class="boxform1"
-              [(ngModel)]="feedbackType"
-              required
-            >
+            <label for="feedbackType" class="textform">
+              <p>Feedback Type</p>
+            </label>
+            <select name="feedbackType" class="boxform1" [(ngModel)]="feedbackType" required>
               <option value="Feedback Type" selected disabled>
                 Feedback Type
               </option>
               <option value="Complaint">Complaint</option>
               <option value="Compliment">Compliment</option>
-              <option value="Suggestion">Suggestion</option></select
-            ><br />
-            <label for="source" class="textform"><p>Source</p></label>
-            <select
-              name="source"
-              class="boxform1"
-              [(ngModel)]="source"
-              required
-            >
+              <option value="Suggestion">Suggestion</option>
+            </select><br />
+            <label for="source" class="textform">
+              <p>Source</p>
+            </label>
+            <select name="source" class="boxform1" [(ngModel)]="source" required>
               <option value="Source" selected disabled>Source</option>
               <option value="Community Member">Community Member</option>
               <option value="Legal Representative">Legal Representative</option>
@@ -62,115 +45,74 @@
               </option>
               <option value="Other (Please Include In Your Feedback)">
                 Other (Please Include In Your Feedback)
-              </option></select
-            ><br />
+              </option>
+            </select><br />
 
-            <label for="feedbackCategory" class="textform"
-              ><p>Feedback Category</p></label
-            >
-            <select
-              class="boxform1"
-              name="feedbackCategory"
-              [(ngModel)]="feedbackCategory"
-              required
-            >
+            <label for="feedbackCategory" class="textform">
+              <p>Feedback Category</p>
+            </label>
+            <select class="boxform1" name="feedbackCategory" [(ngModel)]="feedbackCategory" required>
               <option value="Feedback Category" selected disabled>
                 Feedback Category
               </option>
               <option value="option1">Option 1</option>
-              <option value="option2">Option 2</option></select
-            ><br />
+              <option value="option2">Option 2</option>
+            </select><br />
 
-            <label for="feedbackSubCategory" class="textform"
-              ><p>Feedback SubCategory</p></label
-            >
-            <select
-              class="boxform1"
-              name="feedbackSubCategory"
-              [(ngModel)]="feedbackSubCategory"
-              required
-            >
+            <label for="feedbackSubCategory" class="textform">
+              <p>Feedback SubCategory</p>
+            </label>
+            <select class="boxform1" name="feedbackSubCategory" [(ngModel)]="feedbackSubCategory" required>
               <option value="Feedback SubCategory" selected disabled>
                 Feedback SubCategory
               </option>
               <option value="suboption1">Suboption 1</option>
-              <option value="suboption2">Suboption 2</option></select
-            ><br />
+              <option value="suboption2">Suboption 2</option>
+            </select><br />
 
-            <label for="dateReceived" class="textform"
-              ><p>Date Received</p></label
-            >
-            <input
-              class="boxform1"
-              type="datetime-local"
-              name="dateReceived"
-              [(ngModel)]="dateReceived"
-              required
-            /><br />
+            <label for="dateReceived" class="textform">
+              <p>Date Received</p>
+            </label>
+            <input class="boxform1" type="datetime-local" name="dateReceived" [(ngModel)]="dateReceived"
+              required /><br />
 
-            <label for="text" class="textform"><p>Text</p></label>
-            <textarea name="text" class="boxform1" [(ngModel)]="text"></textarea
-            ><br />
+            <label for="text" class="textform">
+              <p>Text</p>
+            </label>
+            <textarea name="text" class="boxform1" [(ngModel)]="text"></textarea><br />
 
-            <label for="notes" class="textform"><p>Notes</p></label>
-            <textarea
-              name="notes"
-              class="boxform1"
-              [(ngModel)]="notes"
-            ></textarea
-            ><br />
-            <form (ngSubmit)="onSubmit()">
-              <div>
-                <h2 class="textformh2 field hidden">
-                  If You Would Like To Be Contacted
-                </h2>
-                <label for="name" class="textform field hidden">
-                  <p>First Name</p>
-                </label>
-                <input
-                  class="boxform1 field hidden"
-                  type="text"
-                  name="contactName"
-                  [(ngModel)]="contactName"
-                  required
-                /><br />
-                <label for="name" class="textform field hidden">
-                  <p>Last Name</p>
-                </label>
-                <input
-                  class="boxform1 field hidden"
-                  type="text"
-                  name="contactLastName"
-                  [(ngModel)]="contactLastName"
-                  required
-                /><br />
-                <label for="Email" class="textform field hidden"> <p>Email</p> </label>
-                <input
-                  class="boxform1 field hidden"
-                  type="email"
-                  name="contactEmail"
-                  [(ngModel)]="contactEmail"
-                  required
-                /><br />
-                <label for="Phone Number" class="textform field hidden">
-                  <p>Phone Number</p>
-                </label>
-                <input
-                  class="boxform1 field hidden"
-                  type="number"
-                  name="contactPhoneNumber"
-                  [(ngModel)]="contactPhoneNumber"
-                  required
-                /><br /><br />
-              </div>
-            </form>
-            <input
-              type="checkbox"
-              id="showfields"
-              class="textform"
-              onchange="toggleFields()"
-            />
-            Want To Be Contacted?
+            <label for="notes" class="textform">
+              <p>Notes</p>
+            </label>
+            <textarea name="notes" class="boxform1" [(ngModel)]="notes"></textarea><br />
+
+            <div *ngIf="wantToBeContacted">
+              <h2 class="textformh2">
+                If You Would Like To Be Contacted
+              </h2>
+              <label for="name" class="textform">
+                <p>First Name</p>
+              </label>
+              <input class="boxform1" type="text" name="contactName" [(ngModel)]="contactName" required /><br />
+              <label for="name" class="textform">
+                <p>Last Name</p>
+              </label>
+              <input class="boxform1" type="text" name="contactLastName" [(ngModel)]="contactLastName" required /><br />
+              <label for="Email" class="textform">
+                <p>Email</p>
+              </label>
+              <input class="boxform1" type="email" name="contactEmail" [(ngModel)]="contactEmail" required /><br />
+              <label for="Phone Number" class="textform">
+                <p>Phone Number</p>
+              </label>
+              <input class="boxform1" type="number" name="contactPhoneNumber" [(ngModel)]="contactPhoneNumber"
+                required /><br /><br />
+            </div>
+            
+            <div>
+              <input type="checkbox" class="textform" (change)="toggleFields()" />
+              Want To Be Contacted?
+            </div>
             <div class="d-grid mb-2 mx-4">
               <button class="btn-Send btn" type="submit" value="Send">
                 SEND
@@ -182,19 +124,6 @@
     </div>
   </div>
   <div class="text-center mt-2 mb-2 end"></div>
-  <script>
-    function toggleFields() {
-      var fields = document.querySelectorAll(".field"); // Obtener todos los elementos con la clase "campo"
-      var checkbox = document.getElementById("showfields"); // Obtener el checkbox
-
-      // Establecer el estilo de visualización de los campos y títulos según el estado del checkbox
-      for (var i = 0; i < fields.length; i++) {
-        if (checkbox.checked) {
-          fields[i].classList.remove("hidden"); // Mostrar campos y títulos
-        } else {
-          fields[i].classList.add("hidden"); // Ocultar campos y títulos
-        }
-      }
-    }
-  </script>
 </body>
+
+</html>
