@@ -1,7 +1,8 @@
 // feedback-form.component.ts
-import { Component } from '@angular/core';
+import { Component, Renderer2, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Title, Meta } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-feedback-form',
@@ -50,10 +51,27 @@ export class FeedbackFormComponent {
     });
   }
   
-  constructor(private titleService: Title, private metaService: Meta, private httpClient: HttpClient) {
+  constructor(
+    private titleService: Title, 
+    private metaService: Meta,
+    private renderer: Renderer2,
+    @Inject(DOCUMENT) private document: Document,
+    private httpClient: HttpClient) {
+
     this.titleService.setTitle('Feedback and Complains');
 
-    this.metaService.updateTag({ name: 'icon', content: 'assets/iconBDAC.png' });
+    const newLink = this.renderer.createElement('link');
+    newLink.setAttribute('rel', 'icon');
+    newLink.setAttribute('href', 'assets/iconBDAC.png');
+
+    const head = this.document.head;
+    const oldLink = head.querySelector('link[rel="icon"]');
+
+    if (oldLink) {
+      this.renderer.removeChild(head, oldLink);
+    }
+
+    this.renderer.appendChild(head, newLink);
   }
 
 }
