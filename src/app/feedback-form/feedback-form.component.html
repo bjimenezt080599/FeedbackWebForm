@@ -14,8 +14,7 @@
     <h1 class="textformh1">Feedback and Complains</h1>
     <div class="styleform">
       <div>
-        <form (ngSubmit)="onSubmit()">
-          
+        <form (ngSubmit)="onSubmit()">         
           <div>
             <h2 class="textformh2 field">If You Would Like To Be Contacted</h2>
             <label for="name" class="textform field"> <p>First Name</p> </label>
@@ -30,8 +29,8 @@
             <input
               class="boxform1 field"
               type="text"
-              name="contactName"
-              [(ngModel)]="contactName"
+              name="contactLastName"
+              [(ngModel)]="contactLastName"
               required
             /><br />
             <label for="Email" class="textform field"> <p>Email</p> </label>
