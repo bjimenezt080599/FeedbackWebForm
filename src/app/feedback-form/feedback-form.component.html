@@ -187,13 +187,18 @@
         }
       }
     }
-    
-  const dateReceivedInput = document.getElementById("dateReceived");
+    const dateReceivedInput = document.getElementById("dateReceived");
 
-  const currentDateTime = new Date();
+    const currentDate = new Date();
 
-  const formattedDateTime = currentDateTime.toISOString().slice(0, 16);
+    const timeZoneOffset = currentDate.getTimezoneOffset();
 
-  dateReceivedInput.value = formattedDateTime;
+    const adjustedDate = new Date(
+      currentDate.getTime() - timeZoneOffset * 60000
+    );
+
+    const formattedDate = adjustedDate.toISOString().slice(0, 16);
+
+    dateReceivedInput.value = formattedDate;
   </script>
 </body>
