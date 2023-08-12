@@ -142,6 +142,8 @@ export class FeedbackFormComponent {
 
     alert("Feedback sent");
 
+    location.reload();
+
     }
 
     
