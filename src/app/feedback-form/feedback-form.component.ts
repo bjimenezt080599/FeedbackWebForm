@@ -32,11 +32,16 @@ export class FeedbackFormComponent {
   isDateReceivedEmpty = false;
   isTextEmpty = false;
   isNotesEmpty = false;
+  isContactNameEmpty = false;
+  isContactLastNameEmpty = false;
+  isContactEmailEmpty = false;
+  isContactPhoneNumberEmpty = false;
 
 
   //Method to activate and deactivate the "Contact" fields
   toggleFields() {
     this.wantToBeContacted = !this.wantToBeContacted;
+
   }
 
   onSubmit() {
