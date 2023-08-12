@@ -69,6 +69,9 @@ h2{
 }
 .error-message {
   color: #dc3545;
+  font-size: 1.125em;
+  line-height: 1.8;
+  font-family: sans-serif;
 }
 
 .empty-field {
