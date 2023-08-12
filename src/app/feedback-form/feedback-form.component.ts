@@ -81,8 +81,43 @@ export class FeedbackFormComponent {
     }else {
       this.isNotesEmpty = false;
     }
+    if (this.wantToBeContacted) {
+      if (!this.contactName) {
+        this.isContactNameEmpty = true;
+      } else {
+        this.isContactNameEmpty = false;
+      }
+      if (!this.contactLastName) {
+        this.isContactLastNameEmpty = true;
+      } else {
+        this.isContactLastNameEmpty = false;
+      }
+      if (!this.contactEmail) {
+        this.isContactEmailEmpty = true;
+      } else {
+        this.isContactEmailEmpty = false;
+      }
+      if (!this.contactPhoneNumber) {
+        this.isContactPhoneNumberEmpty = true;
+      } else {
+        this.isContactPhoneNumberEmpty = false;
+      }
+    }
 
-    if (!this.isFeedbackTypeEmpty && !this.isSourceEmpty && !this.isFeedbackCategoryEmpty && !this.isFeedbackSubCategoryEmpty && !this.isDateReceivedEmpty && !this.isTextEmpty && !this.isNotesEmpty) {
+    if (
+      !this.isFeedbackTypeEmpty && 
+      !this.isSourceEmpty && 
+      !this.isFeedbackCategoryEmpty && 
+      !this.isFeedbackSubCategoryEmpty && 
+      !this.isDateReceivedEmpty && 
+      !this.isTextEmpty && 
+      !this.isNotesEmpty &&
+      (!this.wantToBeContacted ||
+        (!this.isContactNameEmpty &&
+          !this.isContactLastNameEmpty &&
+          !this.isContactEmailEmpty &&
+          !this.isContactPhoneNumberEmpty))
+      ) {
       // Build the mutation to send the data to the GraphQL API
     const mutation = `mutation feedbackMutation {
       feedbackExternalCreate(detail: {
