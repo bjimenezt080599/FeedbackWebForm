@@ -77,17 +77,16 @@ h2{
 }
 
 
-.form-container {
-    max-width: 80%; 
-    margin: 0 auto;
-    padding: 2%; 
-  }
+@media screen and (min-width: 769px) and (max-width: 1200px) {
 
-
-@media (max-width: 768px) {
-  .form-container {
-    padding: 10px;
-  }
-  
 }
 
+@media screen and (min-width: 1201px) {
+
+}
+@media screen and (max-width: 768px) {
+
+  .styleform {
+    margin: 10px; 
+  }
+}
