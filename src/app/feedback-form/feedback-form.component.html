@@ -1,23 +1,19 @@
 <!-- feedback-form.component.html -->
+<html lang="en">
+
 <head>
-  <link
-    id="favIconLink"
-    rel="shortcut icon"
-    type="image/x-icon"
-    href="C:\Users\s07e05\Downloads\FeedbackWebForm-kilverth\src\assets\iconBDAC.png"
-  />
-  <title>Feedback and Complains</title>
   <link href="feedback-form.component.css" rel="stylesheet" />
+  <meta charset="utf-8">
+  <title>Feedback and Complains</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="assets/iconBDAC.png">
 </head>
+
 <body>
   <div>
     <div class="text-center mt-2 mb-2 stylelogo">
-      <a href="feedback-form.component.html"
-        ><img
-          src="C:\Users\s07e05\Downloads\FeedbackWebForm-kilverth\src\assets\LogoBDAC.png"
-          width="260px"
-          alt=""
-      /></a>
+      <a href="feedback-form.component.html"><img src="assets/LogoBDAC.png" width="260px" alt="" /></a>
     </div>
     <h1 class="textformh1">Feedback and Complains</h1>
     <div class="styleform">
@@ -25,6 +21,7 @@
         <form (ngSubmit)="onSubmit()">
           <div>
             <h2 class="textformh2">About Your Feedback</h2>
+
             <label for="feedbackType" class="textform"
               ><p>Feedback Type</p></label
             >
@@ -46,6 +43,7 @@
               [(ngModel)]="source"
               required
             >
+
               <option value="" disabled selected>Source</option>
               <option value="Community Member">Community Member</option>
               <option value="Legal Representative">Legal Representative</option>
@@ -60,6 +58,7 @@
               </option>
               <option value="Other (Please Include In Your Feedback)">
                 Other (Please Include In Your Feedback)
+
               </option></select
             ><br />
 
@@ -72,10 +71,11 @@
               [(ngModel)]="feedbackCategory"
               required
             >
+
               <option value="" disabled selected>Feedback Category</option>
               <option value="option1">Option 1</option>
-              <option value="option2">Option 2</option></select
-            ><br />
+              <option value="option2">Option 2</option>
+            </select><br />
 
             <label for="feedbackSubCategory" class="textform"
               ><p>Feedback SubCategory</p></label
@@ -86,10 +86,11 @@
               [(ngModel)]="feedbackSubCategory"
               required
             >
+
               <option value="" disabled selected>Feedback SubCategory</option>
               <option value="suboption1">Suboption 1</option>
-              <option value="suboption2">Suboption 2</option></select
-            ><br />
+              <option value="suboption2">Suboption 2</option>
+            </select><br />
 
             <label for="dateReceived" class="textform"
               ><p>Date Received</p></label
@@ -162,6 +163,7 @@
               onchange="toggleFields()"
             />
             Want To Be Contacted?
+
             <div class="d-grid mb-2 mx-4">
               <button class="btn-Send btn" type="submit" value="Send">
                 SEND
@@ -201,4 +203,7 @@
 
     dateReceivedInput.value = formattedDate;
   </script>
+
 </body>
+
+</html>
