@@ -3,6 +3,11 @@
 
 <head>
   <link href="feedback-form.component.css" rel="stylesheet" />
+  <meta charset="utf-8">
+  <title>Feedback and Complains</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="assets/iconBDAC.png">
 </head>
 
 <body>
@@ -20,9 +25,7 @@
               <p>Feedback Type</p>
             </label>
             <select name="feedbackType" class="boxform1" [(ngModel)]="feedbackType" required>
-              <option value="Feedback Type" selected disabled>
-                Feedback Type
-              </option>
+              <option value="" disabled selected>Feedback Type</option>
               <option value="Complaint">Complaint</option>
               <option value="Compliment">Compliment</option>
               <option value="Suggestion">Suggestion</option>
@@ -31,7 +34,7 @@
               <p>Source</p>
             </label>
             <select name="source" class="boxform1" [(ngModel)]="source" required>
-              <option value="Source" selected disabled>Source</option>
+              <option value="" disabled selected>Source</option>
               <option value="Community Member">Community Member</option>
               <option value="Legal Representative">Legal Representative</option>
               <option value="Patient">Patient</option>
@@ -52,9 +55,7 @@
               <p>Feedback Category</p>
             </label>
             <select class="boxform1" name="feedbackCategory" [(ngModel)]="feedbackCategory" required>
-              <option value="Feedback Category" selected disabled>
-                Feedback Category
-              </option>
+              <option value="" disabled selected>Feedback Category</option>
               <option value="option1">Option 1</option>
               <option value="option2">Option 2</option>
             </select><br />
@@ -63,13 +64,26 @@
               <p>Feedback SubCategory</p>
             </label>
             <select class="boxform1" name="feedbackSubCategory" [(ngModel)]="feedbackSubCategory" required>
-              <option value="Feedback SubCategory" selected disabled>
-                Feedback SubCategory
-              </option>
+              <option value="" disabled selected>Feedback SubCategory</option>
               <option value="suboption1">Suboption 1</option>
               <option value="suboption2">Suboption 2</option>
             </select><br />
 
+            <script>
+              const dateReceivedInput = document.getElementById("dateReceived");
+
+              const currentDate = new Date();
+
+              const timeZoneOffset = currentDate.getTimezoneOffset();
+
+              const adjustedDate = new Date(
+                currentDate.getTime() - timeZoneOffset * 60000
+              );
+
+              const formattedDate = adjustedDate.toISOString().slice(0, 16);
+
+              dateReceivedInput.value = formattedDate;
+            </script>
             <label for="dateReceived" class="textform">
               <p>Date Received</p>
             </label>
@@ -93,22 +107,22 @@
               <label for="name" class="textform">
                 <p>First Name</p>
               </label>
-              <input class="boxform1" type="text" name="contactName" [(ngModel)]="contactName" required /><br />
+              <input class="boxform1" type="text" name="contactName" [(ngModel)]="contactName" /><br />
               <label for="name" class="textform">
                 <p>Last Name</p>
               </label>
-              <input class="boxform1" type="text" name="contactLastName" [(ngModel)]="contactLastName" required /><br />
+              <input class="boxform1" type="text" name="contactLastName" [(ngModel)]="contactLastName" /><br />
               <label for="Email" class="textform">
                 <p>Email</p>
               </label>
-              <input class="boxform1" type="email" name="contactEmail" [(ngModel)]="contactEmail" required /><br />
+              <input class="boxform1" type="email" name="contactEmail" [(ngModel)]="contactEmail" /><br />
               <label for="Phone Number" class="textform">
                 <p>Phone Number</p>
               </label>
-              <input class="boxform1" type="number" name="contactPhoneNumber" [(ngModel)]="contactPhoneNumber"
-                required /><br /><br />
+              <input class="boxform1" type="number" name="contactPhoneNumber"
+                [(ngModel)]="contactPhoneNumber" /><br /><br />
             </div>
-            
+
             <div>
               <input type="checkbox" class="textform" (change)="toggleFields()" />
               Want To Be Contacted?

@@ -1,14 +1,14 @@
 // feedback-form.component.ts
-import { Component, Renderer2, Inject } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Title, Meta } from '@angular/platform-browser';
-import { DOCUMENT } from '@angular/common';
+import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-feedback-form',
   templateUrl: './feedback-form.component.html',
   styleUrls: ['./feedback-form.component.css']
 })
+
+
 
 export class FeedbackFormComponent {
 
@@ -55,28 +55,6 @@ export class FeedbackFormComponent {
     });
   }
 
-  constructor(
-    private titleService: Title,
-    private metaService: Meta,
-    private renderer: Renderer2,
-    @Inject(DOCUMENT) private document: Document,
-    private httpClient: HttpClient) {
-
-      //Change the icon and title of the window
-      this.titleService.setTitle('Feedback and Complains');
-
-      const newLink = this.renderer.createElement('link');
-      newLink.setAttribute('rel', 'icon');
-      newLink.setAttribute('href', 'assets/iconBDAC.png');
-
-      const head = this.document.head;
-      const oldLink = head.querySelector('link[rel="icon"]');
-
-      if (oldLink) {
-        this.renderer.removeChild(head, oldLink);
-      }
-
-      this.renderer.appendChild(head, newLink);
-    }
+  constructor(private httpClient: HttpClient) { }
 
 }
