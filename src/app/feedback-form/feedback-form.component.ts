@@ -1,5 +1,5 @@
 // feedback-form.component.ts
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -55,6 +55,19 @@ export class FeedbackFormComponent {
     });
   }
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) { 
+     // Obtener la fecha y hora local actual
+    const currentDate = new Date();
+    
+    // Obtener el desplazamiento de la zona horaria en minutos
+    const timeZoneOffset = currentDate.getTimezoneOffset();
+    
+    // Ajustar la fecha y hora local al formato compatible con el input datetime-local
+    const adjustedDate = new Date(currentDate.getTime() - timeZoneOffset * 60000);
+    const formattedDate = adjustedDate.toISOString().slice(0, 16);
+    
+    // Establecer el valor inicial del campo de fecha
+    this.dateReceived = formattedDate;
+  }
 
 }
