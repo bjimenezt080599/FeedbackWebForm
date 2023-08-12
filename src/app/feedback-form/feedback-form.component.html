@@ -11,6 +11,7 @@
 </head>
 
 <body>
+  <div class="form-container"></div>
   <div>
     <div class="text-center mt-2 mb-2 stylelogo">
       <a href="feedback-form.component.html"><img src="assets/LogoBDAC.png" width="260px" alt="" /></a>
@@ -99,18 +100,22 @@
               <label for="name" class="textform">
                 <p>First Name</p>
               </label>
+              <p class="error-message" *ngIf="isContactNameEmpty">Please write your First Name.</p>
               <input class="boxform1" type="text" name="contactName" [(ngModel)]="contactName" /><br />
               <label for="name" class="textform">
                 <p>Last Name</p>
               </label>
+              <p class="error-message" *ngIf="isContactLastNameEmpty">Please write your Last Name.</p>
               <input class="boxform1" type="text" name="contactLastName" [(ngModel)]="contactLastName" /><br />
               <label for="Email" class="textform">
                 <p>Email</p>
               </label>
+              <p class="error-message" *ngIf="isContactEmailEmpty">Please write your Email.</p>
               <input class="boxform1" type="email" name="contactEmail" [(ngModel)]="contactEmail" /><br />
               <label for="Phone Number" class="textform">
                 <p>Phone Number</p>
               </label>
+              <p class="error-message" *ngIf="isContactPhoneNumberEmpty">Please write your Phone Number.</p>
               <input class="boxform1" type="number" name="contactPhoneNumber"
                 [(ngModel)]="contactPhoneNumber" /><br /><br />
             </div>
@@ -129,6 +134,7 @@
       </div>
     </div>
   </div>
+  
   <div class="text-center mt-2 mb-2 end"></div>
 </body>
 
