@@ -1,137 +1,213 @@
 <!-- feedback-form.component.html -->
 <html lang="en">
+  <head>
+    <link href="feedback-form.component.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <title>Feedback and Complains</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="assets/iconBDAC.png" />
+  </head>
 
-<head>
-  <link href="feedback-form.component.css" rel="stylesheet" />
-  <meta charset="utf-8">
-  <title>Feedback and Complains</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="assets/iconBDAC.png">
-</head>
-
-<body>
-  <div class="form-container"></div>
-  <div>
-    <div class="text-center mt-2 mb-2 stylelogo">
-      <a href="feedback-form.component.html"><img src="assets/LogoBDAC.png" width="260px" alt="" /></a>
-    </div>
-    <h1 class="textformh1">Feedback and Complains</h1>
-    <div class="styleform">
+  <body>
+    <div class="form-container">
       <div>
-        <form (ngSubmit)="onSubmit()">
+        <div class="text-center mt-2 mb-2 stylelogo">
+          <a href="feedback-form.component.html"
+            ><img src="assets/LogoBDAC.png" width="260px" alt=""
+          /></a>
+        </div>
+        <h1 class="textformh1">Feedback and Complains</h1>
+        <div class="styleform">
           <div>
-            <h2 class="textformh2">About Your Feedback</h2>
-            <label for="feedbackType" class="textform">
-              <p>Feedback Type</p>
-            </label>
-            <p class="error-message" *ngIf="isFeedbackTypeEmpty">Please select a Feedback Type.</p>
-            <select name="feedbackType" class="boxform1" [(ngModel)]="feedbackType" required>
-              <option value="" disabled selected>Feedback Type</option>
-              <option value="Complaint">Complaint</option>
-              <option value="Compliment">Compliment</option>
-              <option value="Suggestion">Suggestion</option>
-            </select><br />
-            <label for="source" class="textform">
-              <p>Source</p>
-            </label>
-            <p class="error-message" *ngIf="isSourceEmpty">Please select a Source.</p>
-            <select name="source" class="boxform1" [(ngModel)]="source" required>
-              <option value="" disabled selected>Source</option>
-              <option value="Community Member">Community Member</option>
-              <option value="Legal Representative">Legal Representative</option>
-              <option value="Patient">Patient</option>
-              <option value="Police">Police</option>
-              <option value="Service/ Agency (please include in your feedback)">
-                Service/ Agency (Please Include In Your Feedback)
-              </option>
-              <option value="Supplier">Supplier</option>
-              <option value="Other Service Provider">
-                Other Service Provider
-              </option>
-              <option value="Other (Please Include In Your Feedback)">
-                Other (Please Include In Your Feedback)
-              </option>
-            </select><br />
+            <form (ngSubmit)="onSubmit()">
+              <div>
+                <h2 class="textformh2">About Your Feedback</h2>
+                <label for="feedbackType" class="textform">
+                  <p>Feedback Type</p>
+                </label>
+                <p class="error-message" *ngIf="isFeedbackTypeEmpty">
+                  Please select a Feedback Type.
+                </p>
+                <select
+                  name="feedbackType"
+                  class="boxform1"
+                  [(ngModel)]="feedbackType"
+                  required
+                >
+                  <option value="" disabled selected>Feedback Type</option>
+                  <option value="Complaint">Complaint</option>
+                  <option value="Compliment">Compliment</option>
+                  <option value="Suggestion">Suggestion</option></select
+                ><br />
+                <label for="source" class="textform">
+                  <p>Source</p>
+                </label>
+                <p class="error-message" *ngIf="isSourceEmpty">
+                  Please select a Source.
+                </p>
+                <select
+                  name="source"
+                  class="boxform1"
+                  [(ngModel)]="source"
+                  required
+                >
+                  <option value="" disabled selected>Source</option>
+                  <option value="Community Member">Community Member</option>
+                  <option value="Legal Representative">
+                    Legal Representative
+                  </option>
+                  <option value="Patient">Patient</option>
+                  <option value="Police">Police</option>
+                  <option
+                    value="Service/ Agency (please include in your feedback)"
+                  >
+                    Service/ Agency (Please Include In Your Feedback)
+                  </option>
+                  <option value="Supplier">Supplier</option>
+                  <option value="Other Service Provider">
+                    Other Service Provider
+                  </option>
+                  <option value="Other (Please Include In Your Feedback)">
+                    Other (Please Include In Your Feedback)
+                  </option></select
+                ><br />
 
-            <label for="feedbackCategory" class="textform">
-              <p>Feedback Category</p>
-            </label>
-            <p class="error-message" *ngIf="isFeedbackCategoryEmpty">Please select a Feedback Category.</p>
-            <select class="boxform1" name="feedbackCategory" [(ngModel)]="feedbackCategory" required>
-              <option value="" disabled selected>Feedback Category</option>
-              <option value="option1">Option 1</option>
-              <option value="option2">Option 2</option>
-            </select><br />
+                <label for="feedbackCategory" class="textform">
+                  <p>Feedback Category</p>
+                </label>
+                <p class="error-message" *ngIf="isFeedbackCategoryEmpty">
+                  Please select a Feedback Category.
+                </p>
+                <select
+                  class="boxform1"
+                  name="feedbackCategory"
+                  [(ngModel)]="feedbackCategory"
+                  required
+                >
+                  <option value="" disabled selected>Feedback Category</option>
+                  <option value="option1">Option 1</option>
+                  <option value="option2">Option 2</option></select
+                ><br />
 
-            <label for="feedbackSubCategory" class="textform">
-              <p>Feedback SubCategory</p>
-            </label>
-            <p class="error-message" *ngIf="isFeedbackSubCategoryEmpty">Please select a Feedback Subcategory.</p>
-            <select class="boxform1" name="feedbackSubCategory" [(ngModel)]="feedbackSubCategory" required>
-              <option value="" disabled selected>Feedback SubCategory</option>
-              <option value="suboption1">Suboption 1</option>
-              <option value="suboption2">Suboption 2</option>
-            </select><br />
+                <label for="feedbackSubCategory" class="textform">
+                  <p>Feedback SubCategory</p>
+                </label>
+                <p class="error-message" *ngIf="isFeedbackSubCategoryEmpty">
+                  Please select a Feedback Subcategory.
+                </p>
+                <select
+                  class="boxform1"
+                  name="feedbackSubCategory"
+                  [(ngModel)]="feedbackSubCategory"
+                  required
+                >
+                  <option value="" disabled selected>
+                    Feedback SubCategory
+                  </option>
+                  <option value="suboption1">Suboption 1</option>
+                  <option value="suboption2">Suboption 2</option></select
+                ><br />
 
-            <label for="dateReceived" class="textform">
-              <p>Date Received</p>
-            </label>
-            <p class="error-message" *ngIf="isDateReceivedEmpty">Please select a Data Received.</p>
-            <input class="boxform1" type="datetime-local" name="dateReceived" [(ngModel)]="dateReceived"
-              required /><br />
+                <label for="dateReceived" class="textform">
+                  <p>Date Received</p>
+                </label>
+                <p class="error-message" *ngIf="isDateReceivedEmpty">
+                  Please select a Data Received.
+                </p>
+                <input
+                  class="boxform1"
+                  type="datetime-local"
+                  name="dateReceived"
+                  [(ngModel)]="dateReceived"
+                  required
+                /><br />
 
-            <label for="text" class="textform">
-              <p>Text</p>
-            </label>
-            <p class="error-message" *ngIf="isTextEmpty">Please write Text.</p>
-            <textarea name="text" class="boxform1" [(ngModel)]="text"></textarea><br />
+                <label for="text" class="textform">
+                  <p>Text</p>
+                </label>
+                <p class="error-message" *ngIf="isTextEmpty">
+                  Please write Text.
+                </p>
+                <textarea
+                  name="text"
+                  class="boxform1"
+                  [(ngModel)]="text"
+                ></textarea
+                ><br />
 
-            <label for="notes" class="textform">
-              <p>Notes</p>
-            </label>
-            <p class="error-message" *ngIf="isNotesEmpty">Please write Notes.</p>
-            <textarea name="notes" class="boxform1" [(ngModel)]="notes"></textarea><br />
+                <label for="notes" class="textform">
+                  <p>Notes</p>
+                </label>
+                <p class="error-message" *ngIf="isNotesEmpty">
+                  Please write Notes.
+                </p>
+                <textarea
+                  name="notes"
+                  class="boxform1"
+                  [(ngModel)]="notes"
+                ></textarea
+                ><br />
 
-            <div *ngIf="wantToBeContacted">
-              <h2 class="textformh2">
-                If You Would Like To Be Contacted
-              </h2>
-              <label for="name" class="textform">
-                <p>First Name</p>
-              </label>
-              <input class="boxform1" type="text" name="contactName" [(ngModel)]="contactName" /><br />
-              <label for="name" class="textform">
-                <p>Last Name</p>
-              </label>
-              <input class="boxform1" type="text" name="contactLastName" [(ngModel)]="contactLastName" /><br />
-              <label for="Email" class="textform">
-                <p>Email</p>
-              </label>
-              <input class="boxform1" type="email" name="contactEmail" [(ngModel)]="contactEmail" /><br />
-              <label for="Phone Number" class="textform">
-                <p>Phone Number</p>
-              </label>
-              <input class="boxform1" type="number" name="contactPhoneNumber"
-                [(ngModel)]="contactPhoneNumber" /><br /><br />
-            </div>
+                <div *ngIf="wantToBeContacted">
+                  <h2 class="textformh2">If You Would Like To Be Contacted</h2>
+                  <label for="name" class="textform">
+                    <p>First Name</p>
+                  </label>
+                  <input
+                    class="boxform1"
+                    type="text"
+                    name="contactName"
+                    [(ngModel)]="contactName"
+                  /><br />
+                  <label for="name" class="textform">
+                    <p>Last Name</p>
+                  </label>
+                  <input
+                    class="boxform1"
+                    type="text"
+                    name="contactLastName"
+                    [(ngModel)]="contactLastName"
+                  /><br />
+                  <label for="Email" class="textform">
+                    <p>Email</p>
+                  </label>
+                  <input
+                    class="boxform1"
+                    type="email"
+                    name="contactEmail"
+                    [(ngModel)]="contactEmail"
+                  /><br />
+                  <label for="Phone Number" class="textform">
+                    <p>Phone Number</p>
+                  </label>
+                  <input
+                    class="boxform1"
+                    type="number"
+                    name="contactPhoneNumber"
+                    [(ngModel)]="contactPhoneNumber"
+                  /><br /><br />
+                </div>
 
-            <div>
-              <input type="checkbox" class="textform" (change)="toggleFields()" />
-              Want To Be Contacted?
-            </div>
-            <div class="d-grid mb-2 mx-4">
-              <button class="btn-Send btn" type="submit" value="Send">
-                SEND
-              </button>
-            </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    class="textform"
+                    (change)="toggleFields()"
+                  />
+                  Want To Be Contacted?
+                </div>
+                <div class="d-grid mb-2 mx-4">
+                  <button class="btn-Send btn" type="submit" value="Send">
+                    SEND
+                  </button>
+                </div>
+              </div>
+            </form>
           </div>
-        </form>
+        </div>
       </div>
     </div>
-  </div>
-  </div>
-  <div class="text-center mt-2 mb-2 end"></div>
-</body>
-
+    <div class="text-center mt-2 mb-2 end"></div>
+  </body>
 </html>
