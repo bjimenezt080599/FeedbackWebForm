@@ -24,6 +24,7 @@
             <label for="feedbackType" class="textform">
               <p>Feedback Type</p>
             </label>
+            <p class="error-message" *ngIf="isFeedbackTypeEmpty">Please select a Feedback Type.</p>
             <select name="feedbackType" class="boxform1" [(ngModel)]="feedbackType" required>
               <option value="" disabled selected>Feedback Type</option>
               <option value="Complaint">Complaint</option>
@@ -33,6 +34,7 @@
             <label for="source" class="textform">
               <p>Source</p>
             </label>
+            <p class="error-message" *ngIf="isSourceEmpty">Please select a Source.</p>
             <select name="source" class="boxform1" [(ngModel)]="source" required>
               <option value="" disabled selected>Source</option>
               <option value="Community Member">Community Member</option>
@@ -54,6 +56,7 @@
             <label for="feedbackCategory" class="textform">
               <p>Feedback Category</p>
             </label>
+            <p class="error-message" *ngIf="isFeedbackCategoryEmpty">Please select a Feedback Category.</p>
             <select class="boxform1" name="feedbackCategory" [(ngModel)]="feedbackCategory" required>
               <option value="" disabled selected>Feedback Category</option>
               <option value="option1">Option 1</option>
@@ -63,41 +66,30 @@
             <label for="feedbackSubCategory" class="textform">
               <p>Feedback SubCategory</p>
             </label>
+            <p class="error-message" *ngIf="isFeedbackSubCategoryEmpty">Please select a Feedback Subcategory.</p>
             <select class="boxform1" name="feedbackSubCategory" [(ngModel)]="feedbackSubCategory" required>
               <option value="" disabled selected>Feedback SubCategory</option>
               <option value="suboption1">Suboption 1</option>
               <option value="suboption2">Suboption 2</option>
             </select><br />
 
-            <script>
-              const dateReceivedInput = document.getElementById("dateReceived");
-
-              const currentDate = new Date();
-
-              const timeZoneOffset = currentDate.getTimezoneOffset();
-
-              const adjustedDate = new Date(
-                currentDate.getTime() - timeZoneOffset * 60000
-              );
-
-              const formattedDate = adjustedDate.toISOString().slice(0, 16);
-
-              dateReceivedInput.value = formattedDate;
-            </script>
             <label for="dateReceived" class="textform">
               <p>Date Received</p>
             </label>
+            <p class="error-message" *ngIf="isDateReceivedEmpty">Please select a Data Received.</p>
             <input class="boxform1" type="datetime-local" name="dateReceived" [(ngModel)]="dateReceived"
               required /><br />
 
             <label for="text" class="textform">
               <p>Text</p>
             </label>
+            <p class="error-message" *ngIf="isTextEmpty">Please write Text.</p>
             <textarea name="text" class="boxform1" [(ngModel)]="text"></textarea><br />
 
             <label for="notes" class="textform">
               <p>Notes</p>
             </label>
+            <p class="error-message" *ngIf="isNotesEmpty">Please write Notes.</p>
             <textarea name="notes" class="boxform1" [(ngModel)]="notes"></textarea><br />
 
             <div *ngIf="wantToBeContacted">

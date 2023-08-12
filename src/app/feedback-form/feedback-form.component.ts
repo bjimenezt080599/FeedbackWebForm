@@ -25,6 +25,14 @@ export class FeedbackFormComponent {
   text: string = '';
   notes: string = '';
   wantToBeContacted: boolean = false;
+  isFeedbackTypeEmpty = false;
+  isSourceEmpty = false;
+  isFeedbackCategoryEmpty = false;
+  isFeedbackSubCategoryEmpty = false;
+  isDateReceivedEmpty = false;
+  isTextEmpty = false;
+  isNotesEmpty = false;
+
 
   //Method to activate and deactivate the "Contact" fields
   toggleFields() {
@@ -32,7 +40,45 @@ export class FeedbackFormComponent {
   }
 
   onSubmit() {
-    // Build the mutation to send the data to the GraphQL API
+
+    if (!this.feedbackType) {
+      this.isFeedbackTypeEmpty = true;
+    }else {
+      this.isFeedbackTypeEmpty = false;
+    }
+    if (!this.source) {
+      this.isSourceEmpty = true;
+    }else {
+      this.isSourceEmpty = false;
+    }
+    if (!this.feedbackCategory) {
+      this.isFeedbackCategoryEmpty = true;
+    }else {
+      this.isFeedbackCategoryEmpty = false;
+    }
+    if (!this.feedbackSubCategory) {
+      this.isFeedbackSubCategoryEmpty = true;
+    }else {
+      this.isFeedbackSubCategoryEmpty = false;
+    }
+    if (!this.dateReceived) {
+      this.isDateReceivedEmpty = true;
+    }else {
+      this.isDateReceivedEmpty = false;
+    }
+    if (!this.text) {
+      this.isTextEmpty = true;
+    }else {
+      this.isTextEmpty = false;
+    }
+    if (!this.notes) {
+      this.isNotesEmpty = true;
+    }else {
+      this.isNotesEmpty = false;
+    }
+
+    if (!this.isFeedbackTypeEmpty && !this.isSourceEmpty && !this.isFeedbackCategoryEmpty && !this.isFeedbackSubCategoryEmpty && !this.isDateReceivedEmpty && !this.isTextEmpty && !this.isNotesEmpty) {
+      // Build the mutation to send the data to the GraphQL API
     const mutation = `mutation feedbackMutation {
       feedbackExternalCreate(detail: {
         feedbackType: "${this.feedbackType}",
@@ -53,6 +99,12 @@ export class FeedbackFormComponent {
     }).subscribe((response: any) => {
       console.log('Respuesta de la API:', response);
     });
+
+    alert("Feedback sent");
+
+    }
+
+    
   }
 
   constructor(private httpClient: HttpClient) { 
