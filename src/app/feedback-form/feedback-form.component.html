@@ -21,19 +21,29 @@
         <form (ngSubmit)="onSubmit()">
           <div>
             <h2 class="textformh2">About Your Feedback</h2>
-            <label for="feedbackType" class="textform">
-              <p>Feedback Type</p>
-            </label>
-            <select name="feedbackType" class="boxform1" [(ngModel)]="feedbackType" required>
+
+            <label for="feedbackType" class="textform"
+              ><p>Feedback Type</p></label
+            >
+            <select
+              name="feedbackType"
+              class="boxform1"
+              [(ngModel)]="feedbackType"
+              required
+            >
               <option value="" disabled selected>Feedback Type</option>
               <option value="Complaint">Complaint</option>
               <option value="Compliment">Compliment</option>
-              <option value="Suggestion">Suggestion</option>
-            </select><br />
-            <label for="source" class="textform">
-              <p>Source</p>
-            </label>
-            <select name="source" class="boxform1" [(ngModel)]="source" required>
+              <option value="Suggestion">Suggestion</option></select
+            ><br />
+            <label for="source" class="textform"><p>Source</p></label>
+            <select
+              name="source"
+              class="boxform1"
+              [(ngModel)]="source"
+              required
+            >
+
               <option value="" disabled selected>Source</option>
               <option value="Community Member">Community Member</option>
               <option value="Legal Representative">Legal Representative</option>
@@ -48,85 +58,112 @@
               </option>
               <option value="Other (Please Include In Your Feedback)">
                 Other (Please Include In Your Feedback)
-              </option>
-            </select><br />
 
-            <label for="feedbackCategory" class="textform">
-              <p>Feedback Category</p>
-            </label>
-            <select class="boxform1" name="feedbackCategory" [(ngModel)]="feedbackCategory" required>
+              </option></select
+            ><br />
+
+            <label for="feedbackCategory" class="textform"
+              ><p>Feedback Category</p></label
+            >
+            <select
+              class="boxform1"
+              name="feedbackCategory"
+              [(ngModel)]="feedbackCategory"
+              required
+            >
+
               <option value="" disabled selected>Feedback Category</option>
               <option value="option1">Option 1</option>
               <option value="option2">Option 2</option>
             </select><br />
 
-            <label for="feedbackSubCategory" class="textform">
-              <p>Feedback SubCategory</p>
-            </label>
-            <select class="boxform1" name="feedbackSubCategory" [(ngModel)]="feedbackSubCategory" required>
+            <label for="feedbackSubCategory" class="textform"
+              ><p>Feedback SubCategory</p></label
+            >
+            <select
+              class="boxform1"
+              name="feedbackSubCategory"
+              [(ngModel)]="feedbackSubCategory"
+              required
+            >
+
               <option value="" disabled selected>Feedback SubCategory</option>
               <option value="suboption1">Suboption 1</option>
               <option value="suboption2">Suboption 2</option>
             </select><br />
 
-            <script>
-              const dateReceivedInput = document.getElementById("dateReceived");
+            <label for="dateReceived" class="textform"
+              ><p>Date Received</p></label
+            >
+            <input
+              class="boxform1"
+              type="datetime-local"
+              name="dateReceived"
+              id="dateReceived"
+              required
+            /><br />
 
-              const currentDate = new Date();
+            <label for="text" class="textform"><p>Text</p></label>
+            <textarea name="text" class="boxform1" [(ngModel)]="text" required ></textarea
+            ><br />
 
-              const timeZoneOffset = currentDate.getTimezoneOffset();
+            <label for="notes" class="textform"><p>Notes</p></label>
+            <textarea
+              name="notes"
+              class="boxform1"
+              [(ngModel)]="notes"
+              required
+            ></textarea
+            ><br />
+            <form (ngSubmit)="onSubmit()">
+              <div>
+                <h2 class="textformh2 field hidden">
+                  If You Would Like To Be Contacted
+                </h2>
+                <label for="name" class="textform field hidden">
+                  <p>First Name</p>
+                </label>
+                <input
+                  class="boxform1 field hidden"
+                  type="text"
+                  name="contactName"
+                  [(ngModel)]="contactName"
+                /><br />
+                <label for="name" class="textform field hidden">
+                  <p>Last Name</p>
+                </label>
+                <input
+                  class="boxform1 field hidden"
+                  type="text"
+                  name="contactName"
+                  [(ngModel)]="contactName"
+                /><br />
+                <label for="Email" class="textform field hidden"> <p>Email</p> </label>
+                <input
+                  class="boxform1 field hidden"
+                  type="email"
+                  name="contactEmail"
+                  [(ngModel)]="contactEmail"
+                /><br />
+                <label for="Phone Number" class="textform field hidden">
+                  <p>Phone Number</p>
+                </label>
+                <input
+                  class="boxform1 field hidden"
+                  type="number"
+                  name="contactPhoneNumber"
+                  [(ngModel)]="contactPhoneNumber"
+                /><br /><br />
+              </div>
+            </form>
+            <input
+              type="checkbox"
+              id="showfields"
+              class="textform"
+              onchange="toggleFields()"
+            />
+            Want To Be Contacted?
 
-              const adjustedDate = new Date(
-                currentDate.getTime() - timeZoneOffset * 60000
-              );
-
-              const formattedDate = adjustedDate.toISOString().slice(0, 16);
-
-              dateReceivedInput.value = formattedDate;
-            </script>
-            <label for="dateReceived" class="textform">
-              <p>Date Received</p>
-            </label>
-            <input class="boxform1" type="datetime-local" name="dateReceived" [(ngModel)]="dateReceived"
-              required /><br />
-
-            <label for="text" class="textform">
-              <p>Text</p>
-            </label>
-            <textarea name="text" class="boxform1" [(ngModel)]="text"></textarea><br />
-
-            <label for="notes" class="textform">
-              <p>Notes</p>
-            </label>
-            <textarea name="notes" class="boxform1" [(ngModel)]="notes"></textarea><br />
-
-            <div *ngIf="wantToBeContacted">
-              <h2 class="textformh2">
-                If You Would Like To Be Contacted
-              </h2>
-              <label for="name" class="textform">
-                <p>First Name</p>
-              </label>
-              <input class="boxform1" type="text" name="contactName" [(ngModel)]="contactName" /><br />
-              <label for="name" class="textform">
-                <p>Last Name</p>
-              </label>
-              <input class="boxform1" type="text" name="contactLastName" [(ngModel)]="contactLastName" /><br />
-              <label for="Email" class="textform">
-                <p>Email</p>
-              </label>
-              <input class="boxform1" type="email" name="contactEmail" [(ngModel)]="contactEmail" /><br />
-              <label for="Phone Number" class="textform">
-                <p>Phone Number</p>
-              </label>
-              <input class="boxform1" type="number" name="contactPhoneNumber"
-                [(ngModel)]="contactPhoneNumber" /><br /><br />
-            </div>
-
-            <div>
-              <input type="checkbox" class="textform" (change)="toggleFields()" />
-              Want To Be Contacted?
-            </div>
             <div class="d-grid mb-2 mx-4">
               <button class="btn-Send btn" type="submit" value="Send">
                 SEND
@@ -138,6 +175,35 @@
     </div>
   </div>
   <div class="text-center mt-2 mb-2 end"></div>
+  <script>
+    function toggleFields() {
+      var fields = document.querySelectorAll(".field"); // Obtener todos los elementos con la clase "campo"
+      var checkbox = document.getElementById("showfields"); // Obtener el checkbox
+
+      // Establecer el estilo de visualización de los campos y títulos según el estado del checkbox
+      for (var i = 0; i < fields.length; i++) {
+        if (checkbox.checked) {
+          fields[i].classList.remove("hidden"); // Mostrar campos y títulos
+        } else {
+          fields[i].classList.add("hidden"); // Ocultar campos y títulos
+        }
+      }
+    }
+    const dateReceivedInput = document.getElementById("dateReceived");
+
+    const currentDate = new Date();
+
+    const timeZoneOffset = currentDate.getTimezoneOffset();
+
+    const adjustedDate = new Date(
+      currentDate.getTime() - timeZoneOffset * 60000
+    );
+
+    const formattedDate = adjustedDate.toISOString().slice(0, 16);
+
+    dateReceivedInput.value = formattedDate;
+  </script>
+
 </body>
 
 </html>
